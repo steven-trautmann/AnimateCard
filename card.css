@@ -1,1 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.cardsContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.container {
+  perspective: 40vw;
+  width: 45vw;
+  height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2.5%;
+  border: solid black 0.2rem;
+  margin: 2vw;
+}
+
+.card {
+  transform-style: preserve-3d;
+  width: 75%;
+  border-radius: 10%;
+  background-color: darkgray;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2), 0 0 4rem rgba(0, 0, 0, 0.2);
+  margin: 2vw;
+}
+
+.rabbit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rabbit img {
+  width: 15vw;
+  height: 14vw;
+  z-index: 20;
+}
+
+.rabbit img:hover {
+  animation: shake 1.5s;
+  animation-iteration-count: infinite;
+  cursor: pointer;
+}
+
+.petting {
+  animation: shake 1.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -1px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-2px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(2px, 1px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-2px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(2px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -1px) rotate(-1deg);
+  }
+}
+
+.circle {
+  width: 15vw;
+  height: 14vw;
+  background: linear-gradient(to right, gray, white);
+  border-radius: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+.info {
+  text-align: center;
+}
+
+.info h4 {
+  font-size: 1.3;
+  padding: 2rem, 0;
+  color: #585858;
+  font-weight: lighter;
+}
+
+.vote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 5;
+}
+
+.vote button {
+  padding: 0.5rem 1rem;
+  margin: 0.1rem;
+  border: none;
+  box-shadow: 0 0.25rem 0.6rem rgba(0, 0, 0, 0.2);
+  border-radius: 2.5%;
+  font-weight: bold;
+  color: #585858;
+  cursor: pointer;
+  background-color: white;
+  outline: none;
+}
+
+button.active {
+  color: white;
+  background-color: #585855;
+}
+
+.purchase {
+  position: relative;
+}
+
+.purchase button {
+  margin-top: 1rem;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 1.5rem;
+  padding-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.purchase .invisibleCircle {
+  height: 2rem;
+  width: 100%;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+  background-color: darkgray;
+  position: absolute;
+  z-index: 3;
+}

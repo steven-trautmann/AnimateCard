@@ -18,7 +18,7 @@ body {
 .container {
   perspective: 40vw;
   width: 45vw;
-  height: 75vh;
+  min-height: 75vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,70 +28,111 @@ body {
 }
 
 .card {
-  transform-style: preserve-3d;
   width: 75%;
   border-radius: 10%;
   background-color: darkgray;
-  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2), 0 0 4rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2), 0 0 2rem rgba(0, 0, 0, 0.5);
   margin: 2vw;
+  overflow: hidden;
 }
 
 .rabbit {
+  perspective: 40vw;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .rabbit img {
+  transition: 0.5s ease;
   width: 15vw;
   height: 14vw;
   z-index: 20;
 }
 
 .rabbit img:hover {
-  animation: shake 1.5s;
-  animation-iteration-count: infinite;
   cursor: pointer;
 }
 
-.petting {
-  animation: shake 1.5s;
+.pettingUnlifted {
+  animation: shakeUnlifted 1.5s;
   animation-iteration-count: infinite;
 }
 
-@keyframes shake {
+.pettingLifted {
+  animation: shakeLifted 1.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shakeUnlifted {
   0% {
-    transform: translate(1px, 1px) rotate(0deg);
+    transform: translate3d(1px, 1px, 2rem) rotate(0deg);
   }
   10% {
-    transform: translate(-1px, -1px) rotate(-1deg);
+    transform: translate3d(-1px, -1px, 1rem) rotate(-1deg);
   }
   20% {
-    transform: translate(-2px, 0px) rotate(1deg);
+    transform: translate3d(-2px, 0px, 1rem) rotate(1deg);
   }
   30% {
-    transform: translate(2px, 1px) rotate(0deg);
+    transform: translate3d(2px, 1px, 1rem) rotate(0deg);
   }
   40% {
-    transform: translate(1px, -1px) rotate(1deg);
+    transform: translate3d(1px, -1px, 1rem) rotate(1deg);
   }
   50% {
-    transform: translate(-1px, 2px) rotate(-1deg);
+    transform: translate3d(-1px, 2px, 2rem) rotate(-1deg);
   }
   60% {
-    transform: translate(-2px, 1px) rotate(0deg);
+    transform: translate3d(-2px, 1px, 1rem) rotate(0deg);
   }
   70% {
-    transform: translate(2px, 1px) rotate(-1deg);
+    transform: translate3d(2px, 1px, 1rem) rotate(-1deg);
   }
   80% {
-    transform: translate(-1px, -1px) rotate(1deg);
+    transform: translate3d(-1px, -1px, 1rem) rotate(1deg);
   }
   90% {
-    transform: translate(1px, 1px) rotate(0deg);
+    transform: translate3d(1px, 1px, 2rem) rotate(0deg);
   }
   100% {
-    transform: translate(1px, -1px) rotate(-1deg);
+    transform: translate3d(1px, -1px, 2rem) rotate(0deg);
+  }
+}
+
+@keyframes shakeLifted {
+  0% {
+    transform: translate3d(1px, 1px, 2rem) rotateY(180deg);
+  }
+  10% {
+    transform: translate3d(-1px, -1px, 1rem) rotateY(179deg);
+  }
+  20% {
+    transform: translate3d(-2px, 0px, 1rem) rotateY(181deg);
+  }
+  30% {
+    transform: translate3d(2px, 1px, 1rem) rotateY(180deg);
+  }
+  40% {
+    transform: translate3d(1px, -1px, 1rem) rotateY(181deg);
+  }
+  50% {
+    transform: translate3d(-1px, 2px, 2rem) rotateY(179deg);
+  }
+  60% {
+    transform: translate3d(-2px, 1px, 1rem) rotateY(180deg);
+  }
+  70% {
+    transform: translate3d(2px, 1px, 1rem) rotateY(179deg);
+  }
+  80% {
+    transform: translate3d(-1px, -1px, 1rem) rotateY(181deg);
+  }
+  90% {
+    transform: translate3d(1px, 1px, 2rem) rotateY(180deg);
+  }
+  100% {
+    transform: translate3d(1px, -1px, 2rem) rotateY(179deg);
   }
 }
 
@@ -130,6 +171,7 @@ body {
   box-shadow: 0 0.25rem 0.6rem rgba(0, 0, 0, 0.2);
   border-radius: 2.5%;
   font-weight: bold;
+  font-size: 0.9rem;
   color: #585858;
   cursor: pointer;
   background-color: white;
@@ -155,6 +197,11 @@ button.active {
   font-weight: bold;
   font-size: 1.5rem;
   cursor: pointer;
+}
+
+.purchase button:hover {
+  background-color: #585858;
+  color: white;
 }
 
 .purchase .invisibleCircle {

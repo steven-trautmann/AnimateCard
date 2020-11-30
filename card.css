@@ -44,7 +44,8 @@ body {
 }
 
 .rabbit img {
-  transition: 0.5s ease;
+  transition: all 0.5s ease;
+  transition-duration: 0.5s;
   width: 15vw;
   height: 14vw;
   z-index: 20;
@@ -55,13 +56,21 @@ body {
 }
 
 .pettingUnlifted {
-  animation: shakeUnlifted 1.5s;
+  animation: shakeUnlifted 1.5s linear;
   animation-iteration-count: infinite;
 }
 
 .pettingLifted {
-  animation: shakeLifted 1.5s;
+  animation: shakeLifted 1.5s linear;
   animation-iteration-count: infinite;
+}
+
+.rotateAndPettingLifted {
+  animation: rotateToLifted 1.1s ease, shakeLifted 1.5s linear 1.1s infinite;
+}
+
+.rotateAndPettingUnlifted {
+  animation: rotateToUnlifted 1.1s ease, shakeUnlifted 1.5s linear 1.1s infinite;
 }
 
 @keyframes shakeUnlifted {
@@ -133,6 +142,36 @@ body {
   }
   100% {
     transform: translate3d(1px, -1px, 2rem) rotateY(179deg);
+  }
+}
+
+@keyframes rotateToUnlifted {
+  0% {
+    transform: translate3d(0, 0, 2rem) rotateY(180deg);
+  }
+  30% {
+    transform: translate3d(0, 0, 2rem) rotateY(0deg);
+  }
+  70% {
+    transform: translate3d(0, 0, 2rem) rotateY(180deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 2rem) rotateY(0deg);
+  }
+}
+
+@keyframes rotateToLifted {
+  0% {
+    transform: translate3d(0, 0, 2rem) rotateY(0deg);
+  }
+  30% {
+    transform: translate3d(0, 0, 2rem) rotateY(180deg);
+  }
+  70% {
+    transform: translate3d(0, 0, 2rem) rotateY(0deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 2rem) rotateY(180deg);
   }
 }
 

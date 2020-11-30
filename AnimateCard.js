@@ -61,10 +61,15 @@ function rabbitPetting(){
         purchaseButton.addEventListener("click", (e) => {
             let prevTransform = rabbit.style.transform;
             e.target.classList.toggle("active");
-            if (prevTransform.includes("rotateY(180deg)")){
-                rabbit.classList.toggle("pettingLifted");
+
+            if (rabbit.classList.length === 0){
+                if (prevTransform.includes("rotateY(180deg)")){
+                    rabbit.classList.toggle("pettingLifted");
+                } else {
+                    rabbit.classList.toggle("pettingUnlifted");
+                }
             } else {
-                rabbit.classList.toggle("pettingUnlifted");
+                rabbit.classList = [];
             }
         })
 
@@ -74,13 +79,21 @@ function rabbitPetting(){
                 rabbit.style.transform = prevTransform.replace("rotateY(180deg)", '');
                 if (rabbit.classList.contains("pettingLifted")){
                     rabbit.classList.toggle("pettingLifted");
-                    rabbit.classList.toggle("pettingUnlifted");
+                    rabbit.classList.toggle("rotateAndPettingUnlifted");
+                }
+                if (rabbit.classList.contains("rotateAndPettingLifted")){
+                    rabbit.classList.toggle("rotateAndPettingLifted");
+                    rabbit.classList.toggle("rotateAndPettingUnlifted");
                 }
             } else {
                 rabbit.style.transform = prevTransform + " rotateY(180deg)";
                 if (rabbit.classList.contains("pettingUnlifted")){
                     rabbit.classList.toggle("pettingUnlifted");
-                    rabbit.classList.toggle("pettingLifted");
+                    rabbit.classList.toggle("rotateAndPettingLifted");
+                }
+                if (rabbit.classList.contains("rotateAndPettingUnlifted")){
+                    rabbit.classList.toggle("rotateAndPettingUnlifted");
+                    rabbit.classList.toggle("rotateAndPettingLifted");
                 }
             }
         })

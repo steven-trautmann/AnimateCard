@@ -1,78 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
-
-.cardsContainer {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.container {
-  perspective: 40vw;
-  width: 45vw;
-  min-height: 75vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 2.5%;
-  border: solid black 0.2rem;
-  margin: 2vw;
-}
-
-.card {
-  width: 75%;
-  border-radius: 10%;
-  background-color: darkgray;
-  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2), 0 0 2rem rgba(0, 0, 0, 0.5);
-  margin: 2vw;
-  overflow: hidden;
-}
-
-.rabbit {
-  perspective: 40vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.rabbit img {
-  transition: all 0.5s ease;
-  transition-duration: 0.5s;
-  width: 15vw;
-  height: 14vw;
-  z-index: 20;
-}
-
-.rabbit img:hover {
-  cursor: pointer;
-}
-
-.pettingUnlifted {
-  animation: shakeUnlifted 1.5s linear;
-  animation-iteration-count: infinite;
-}
-
-.pettingLifted {
-  animation: shakeLifted 1.5s linear;
-  animation-iteration-count: infinite;
-}
-
-.rotateAndPettingLifted {
-  animation: rotateToLifted 1.1s ease, shakeLifted 1.5s linear 1.1s infinite;
-}
-
-.rotateAndPettingUnlifted {
-  animation: rotateToUnlifted 1.1s ease, shakeUnlifted 1.5s linear 1.1s infinite;
-}
-
 @keyframes shakeUnlifted {
   0% {
     transform: translate3d(1px, 1px, 2rem) rotate(0deg);
@@ -108,7 +33,6 @@ body {
     transform: translate3d(1px, -1px, 2rem) rotate(0deg);
   }
 }
-
 @keyframes shakeLifted {
   0% {
     transform: translate3d(1px, 1px, 2rem) rotateY(180deg);
@@ -144,7 +68,6 @@ body {
     transform: translate3d(1px, -1px, 2rem) rotateY(179deg);
   }
 }
-
 @keyframes rotateToUnlifted {
   0% {
     transform: translate3d(0, 0, 2rem) rotateY(180deg);
@@ -159,7 +82,6 @@ body {
     transform: translate3d(0, 0, 2rem) rotateY(0deg);
   }
 }
-
 @keyframes rotateToLifted {
   0% {
     transform: translate3d(0, 0, 2rem) rotateY(0deg);
@@ -173,6 +95,79 @@ body {
   100% {
     transform: translate3d(0, 0, 2rem) rotateY(180deg);
   }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.cardsContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 40vw;
+  width: 45vw;
+  min-height: 75vh;
+  border-radius: 2.5%;
+  border: solid black 0.2rem;
+  margin: 2vw;
+}
+
+.card {
+  width: 75%;
+  border-radius: 10%;
+  background-color: darkgray;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2), 0 0 2rem rgba(0, 0, 0, 0.5);
+  margin: 2vw;
+  overflow: hidden;
+}
+
+.rabbit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 40vw;
+}
+
+.rabbit img {
+  transition: all 0.5s ease;
+  transition-duration: 0.5s;
+  width: 15vw;
+  height: 14vw;
+  z-index: 20;
+}
+
+.rabbit img:hover {
+  cursor: pointer;
+}
+
+.pettingUnlifted {
+  animation: shakeUnlifted 1.5s linear;
+  animation-iteration-count: infinite;
+}
+
+.pettingLifted {
+  animation: shakeLifted 1.5s linear;
+  animation-iteration-count: infinite;
+}
+
+.rotateAndPettingLifted {
+  animation: rotateToLifted 1.1s ease, shakeLifted 1.5s linear 1.1s infinite;
+}
+
+.rotateAndPettingUnlifted {
+  animation: rotateToUnlifted 1.1s ease, shakeUnlifted 1.5s linear 1.1s infinite;
 }
 
 .circle {
@@ -252,3 +247,5 @@ button.active {
   position: absolute;
   z-index: 3;
 }
+
+/*# sourceMappingURL=compiled-card.css.map */
